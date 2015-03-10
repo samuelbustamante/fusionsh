@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Personal
+db.sqlite3
+static
+media
