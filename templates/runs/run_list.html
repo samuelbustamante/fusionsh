@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul class="list-unstyled">
+{% for run in run_list %}
+    <li>
+        <a href="{% url 'runner_create' run.pk %}">{{ run }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
