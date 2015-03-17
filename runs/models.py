@@ -28,6 +28,7 @@ class Run(models.Model):
     banner = models.ImageField('banner', upload_to='banners')
     payment_method = models.CharField('método de pago', max_length=32)
     payment_place = models.CharField('lugar de pago', max_length=32)
+    categories = models.ManyToManyField(Category, verbose_name='categorías')
 
     def __str__(self):
         return '{} - {}'.format(self.date.strftime('%Y/%m/%d - %H:%M'), self.distance)
