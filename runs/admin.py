@@ -1,6 +1,8 @@
 # coding=utf-8
 
+from django.db import models
 from django.contrib import admin
+from django.forms import CheckboxSelectMultiple
 from runs.models import Category, Run, Runner
 
 
@@ -11,7 +13,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Run)
 class RunAdmin(admin.ModelAdmin):
-    pass
+    formfield_overrides = {
+        models.ManyToManyField: {'widget': CheckboxSelectMultiple},
+    }
 
 
 @admin.register(Runner)
